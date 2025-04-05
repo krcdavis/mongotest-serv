@@ -4,11 +4,12 @@ import cors from "cors";
 const app = express();
 
 const opts = {
-  origin: ["http://localhost:5173/"], //process.env.ORG || "http://localhost:5173/"
+  origin: ["http://localhost:5173"], 
+//process.env.ORG || "http://localhost:5173/"
   methods: ["POST", "GET"],
   credentials: true};
 
-app.use(cors());
+app.use(cors(opts));
 app.use(express.json());
 
 //i've gutted the records stuff from the tutorial and put it all here...
@@ -19,7 +20,7 @@ const colln = "board1";
 //collection == board, so the board name to use in query will actually need to be passed in
 
 // This; dbname is specified and used here
-import db from "./db/connection.js";
+import db from "./connection.js";
 
 // This help convert the id from string to ObjectId for the _id.
 import { ObjectId } from "mongodb";

@@ -3,7 +3,8 @@ import { MongoClient, ServerApiVersion } from "mongodb";
 const URI = process.env.ATLAS_URI || "aaa";
 //you're not supposed to use quotes in the env file what ok
 
-console.log(URI);
+//console.log(URI);
+console.log("it works(maybe)");
 
 const dbn = process.env.DBN || "eposts";
 
